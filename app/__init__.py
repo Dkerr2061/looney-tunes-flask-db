@@ -8,7 +8,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 app.config.from_object(Config)
-
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///app.db"
 metadata = MetaData(
     naming_convention={
         "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
